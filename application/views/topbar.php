@@ -46,40 +46,40 @@
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right">
                                         <h6 class="notification-title">Notifications</h6>
-                                        <p class="notification-text">You have 2 unread notification</p>
-                                        <div class="notification-list">
+                                        <p class="notification-text">You have 0 unread notification</p>
+                                        <!-- <div class="notification-list">
                                             <div class="media new">
                                                 <div class="img-user"><img src="/assets/dist/img/avatar.png" alt=""></div>
                                                 <div class="media-body">
                                                     <h6>Congratulate <strong>Socrates Itumay</strong> for work anniversaries</h6>
                                                     <span>Mar 15 12:32pm</span>
                                                 </div>
-                                            </div><!--/.media -->
+                                            </div>
                                             <div class="media new">
                                                 <div class="img-user online"><img src="/assets/dist/img/avatar2.png" alt=""></div>
                                                 <div class="media-body">
                                                     <h6><strong>Joyce Chua</strong> just created a new blog post</h6>
                                                     <span>Mar 13 04:16am</span>
                                                 </div>
-                                            </div><!--/.media -->
+                                            </div>
                                             <div class="media">
                                                 <div class="img-user"><img src="/assets/dist/img/avatar3.png" alt=""></div>
                                                 <div class="media-body">
                                                     <h6><strong>Althea Cabardo</strong> just created a new blog post</h6>
                                                     <span>Mar 13 02:56am</span>
                                                 </div>
-                                            </div><!--/.media -->
+                                            </div>
                                             <div class="media">
                                                 <div class="img-user"><img src="/assets/dist/img/avatar4.png" alt=""></div>
                                                 <div class="media-body">
                                                     <h6><strong>Adrian Monino</strong> added new comment on your photo</h6>
                                                     <span>Mar 12 10:40pm</span>
                                                 </div>
-                                            </div><!--/.media -->
-                                        </div><!--/.notification -->
-                                        <div class="dropdown-footer"><a href="#">View All Notifications</a></div>
-                                    </div><!--/.dropdown-menu -->
-                                </li><!--/.dropdown-->
+                                            </div>
+                                        </div>
+                                        <div class="dropdown-footer"><a href="#">View All Notifications</a></div> -->
+                                    </div>
+                                </li>
                                 <li class="nav-item dropdown user-menu">
                                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
                                         <!--<img src="assets/dist/img/user2-160x160.png" alt="">-->
@@ -93,14 +93,14 @@
                                             <div class="img-user">
                                                 <img src="/assets/dist/img/avatar-1.jpg" alt="">
                                             </div><!-- img-user -->
-                                            <h6>Naeem Khan</h6>
-                                            <span><a href="/cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="4a2f322b273a262f0a2d272b232664292527">[email&#160;protected]</a></span>
+                                            <h6><?php echo $first_name.' '.$last_name ?></h6>
+                                            <span style="text-transform:uppercase"><a href="#" class="__cf_email__" ><?php echo $username ?></a></span>
                                         </div><!-- user-header -->
                                         <a href="#" class="dropdown-item"><i class="typcn typcn-user-outline"></i> My Profile</a>
                                         <a href="#" class="dropdown-item"><i class="typcn typcn-edit"></i> Edit Profile</a>
                                         <a href="#" class="dropdown-item"><i class="typcn typcn-arrow-shuffle"></i> Activity Logs</a>
                                         <a href="#" class="dropdown-item"><i class="typcn typcn-cog-outline"></i> Account Settings</a>
-                                        <a href="page-signin.html" class="dropdown-item"><i class="typcn typcn-key-outline"></i> Sign Out</a>
+                                        <a href="#" class="dropdown-item"><i class="typcn typcn-key-outline"></i> Sign Out</a>
                                     </div><!--/.dropdown-menu -->
                                 </li>
                             </ul><!--/.navbar nav-->

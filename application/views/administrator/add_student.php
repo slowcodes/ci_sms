@@ -21,11 +21,6 @@
         <!--Start Your Custom Style Now-->
         <link href="/assets/dist/css/style.css" rel="stylesheet">
 
-        <style type="text/css">
-            .parsley-type{
-                color:red
-            }
-        </style>
     </head>
     <body class="fixed">
         <!-- Page Loader -->
@@ -106,7 +101,7 @@
                                                 <div class="col-md-4 mb-3">
                                                     <div class="form-group">
                                                         <label for="first_name" class="font-weight-600">First Name</label>
-                                                        <input type="text" class="form-control" id="first_name" aria-describedby="emailHelp" placeholder="First name">
+                                                        <input type="text" class="form-control" id="first_name" aria-describedby="emailHelp" placeholder="First name" required>
                                                         <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
                                                     </div>
                                                 </div>
@@ -128,13 +123,13 @@
                                                 <div class="col-md-4 mb-3">
                                                     <div class="form-group">
                                                         <label for="example-date-input" class="font-weight-600">Date of birth</label>
-                                                        <input class="form-control" type="date" value="2011-08-19" id="example-date-input">                                                    
+                                                        <input class="form-control" type="date" value="2011-08-19" id="example-date-input" required>                                                    
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4 mb-3">
                                                     <div class="form-group">
                                                         <label for="sex" class="font-weight-600">Sex</label>
-                                                        <select class="form-control" id="sex">
+                                                        <select class="form-control" id="sex" required=""> 
                                                             <option>Choose sex</option>
                                                             <option>Female</option>
                                                             <option>Male</option>
@@ -144,7 +139,7 @@
                                                 <div class="col-md-4 mb-3">
                                                     <div class="form-group form-check">
                                                         <label class="font-weight-600"  for="middle_name">Religion</label>
-                                                        <select class="form-control" id="sex" aria-describedby="emailHelp">
+                                                        <select class="form-control" id="sex" aria-describedby="emailHelp" required="">
                                                             <option>Choose Religion</option>
                                                             <option>African Traditional Religion</option>
                                                             <option>Buduism</option>
@@ -181,8 +176,8 @@
                                                 </div>
                                                 <div class="col-md-4 mb-3">
                                                     <div class="form-group form-check">
-                                                        <label class="font-weight-600"  for="middle_name">Nationality</label>
-                                                        <select class="form-control" id="sex" aria-describedby="emailHelp">
+                                                        <label class="font-weight-600"  for="nationality">Nationality</label>
+                                                        <select class="form-control" id="nationality" aria-describedby="emailHelp">
                                                             <option>Choose nationality</option>
                                                             <option>Nigeria</option>
                                                         </select>
@@ -197,20 +192,20 @@
                                                 <div class="col-md-4 mb-3">
                                                     <div class="form-group">
                                                         <label for="username" class="font-weight-600">Username</label>
-                                                        <input type="text" class="form-control" id="username" aria-describedby="emailHelp" placeholder="First name">
+                                                        <input type="text" class="form-control" id="username" required="">
                                                         <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4 mb-3">
                                                     <div class="form-group">
                                                         <label for="password" class="font-weight-600">Password</label>
-                                                        <input type="text" class="form-control" id="password" placeholder="Last name ">
+                                                        <input type="password" class="form-control" id="password" required="">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4 mb-3">
                                                     <div class="form-group form-check">
                                                         <label class="font-weight-600"  for="conf_password">Confirm password</label>
-                                                        <input type="text" class="form-control" id="conf_password" aria-describedby="emailHelp" placeholder="Middle name">
+                                                        <input type="password" class="form-control" id="conf_password" aria-describedby="emailHelp" placeholder="Middle name">
                                                     </div>
                                                 </div>
                                             </div>
@@ -225,18 +220,18 @@
                                                 </div>
                                                 <div class="col-md-4 mb-3">
                                                     <div class="form-group">
-                                                        <label for="sex" class="font-weight-600">Academic level</label>
-                                                        <select class="form-control" id="sex">
+                                                        <label for="academic_level" class="font-weight-600">Academic level</label>
+                                                        <select class="form-control" id="academic_level">
                                                             <option>Choose level</option>
-                                                            <option>Female</option>
-                                                            <option>Male</option>
+                                                            <option>JSS 1</option>
+                                                            <option>JSS 2</option>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4 mb-3">
                                                     <div class="form-group form-check">
-                                                        <label class="font-weight-600"  for="middle_name">Class</label>
-                                                        <select class="form-control" id="sex" aria-describedby="emailHelp">
+                                                        <label class="font-weight-600"  for="aclass">Class</label>
+                                                        <select class="form-control" id="aclass" required="">
                                                             <option>Choose class</option>
                                                         </select>
                                                     </div>
@@ -245,8 +240,8 @@
                                             </div>
 
                                             <div class="card-footer">
-                                                <button type="button" class="btn btn-primary mr-1">Submit</button>
-                                                <button type="button" class="btn btn-danger">Cancel</button>
+                                                <button type="submit" class="btn btn-primary mr-1">Submit</button>
+                                                <button type="cancel" class="btn btn-danger">Cancel</button>
                                             </div>
                                         </div>
                                     </div>
@@ -276,6 +271,7 @@
                     $('.bs-callout-warning').toggleClass('hidden', ok);
                 })
                 .on('form:submit', function() {
+                    console.log("submited")
                     return false; // Don't submit form for this demo
                 });
             });

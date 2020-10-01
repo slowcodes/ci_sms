@@ -121,8 +121,8 @@
                                 </div>
                             </div>
                             <div class="card-footer">
-                                <button type="button" class="btn btn-primary mr-1">Submit</button>
-                                <button type="button" class="btn btn-danger">Cancel</button>
+                                <button type="submit" class="btn btn-primary mr-1">Submit</button>
+                                <button type="cancel" class="btn btn-danger">Cancel</button>
                             </div>
                         </div>
                     </div><!--/.body content-->
