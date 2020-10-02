@@ -105,7 +105,7 @@
                                             <tr>
                                                 <th>#</th>
                                                 <th>Photo</th>
-                                                <th>Reg. #</th>
+                                                <th>Staff. #</th>
                                                 <th>Name</th>
                                                 <th>Sex</th>
                                                 <th>Action</th>
@@ -117,7 +117,7 @@
                                             <tr>
                                                 <th>#</th>
                                                 <th>Photo</th>
-                                                <th>Reg. #</th>
+                                                <th>Staff. #</th>
                                                 <th>Name</th>
                                                 <th>Sex</th>
                                                 <th>Action</th>

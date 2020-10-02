@@ -45,9 +45,15 @@ $(document).ready(function () {
     $('[data-toggle="tooltip"]').tooltip();
 
     //Performance Chart
-    var chart_labels = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    var temp_dataset = [25, 30, 20, 30, 20, 20, 15, 25, 20, 30, 25, 30];
-    var rain_dataset = [25, 20, 30, 22, 17, 20, 18, 26, 28, 26, 20, 32];
+    //var chart_labels = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    //var temp_dataset = [25, 30, 20, 30, 20, 20, 15, 25, 20, 30, 25, 30];
+    //var rain_dataset = [25, 20, 30, 22, 17, 20, 18, 26, 28, 26, 20, 32];
+    
+    var chart_labels = ["September", "October"];
+    var temp_dataset = [25, 30];
+    var rain_dataset = [25, 20];
+    
+    
     var ctx = document.getElementById("forecast").getContext('2d');
     var config = {
         type: 'bar',
@@ -107,9 +113,13 @@ $(document).ready(function () {
         forecast_chart.update();
     });
     $("#1").on("click", function () {
-        var chart_labels = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-        var temp_dataset = [0, 15, 5, 30, 10, 20, 10, 15, 10, 30, 25, 10];
-        var rain_dataset = [20, 25, 30, 35, 27, 23, 18, 26, 28, 26, 20, 32];
+        //var chart_labels = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        //var temp_dataset = [0, 15, 5, 30, 10, 20, 10, 15, 10, 30, 25, 10];
+        //var rain_dataset = [20, 25, 30, 35, 27, 23, 18, 26, 28, 26, 20, 32];
+        var chart_labels = ["September", "October"];
+        var temp_dataset = [0, 15];
+        var rain_dataset = [20, 25];
+        
         var data = forecast_chart.config.data;
         data.datasets[0].data = temp_dataset;
         data.datasets[1].data = rain_dataset;
@@ -117,9 +127,14 @@ $(document).ready(function () {
         forecast_chart.update();
     });
     $("#2").on("click", function () {
-        var chart_labels = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-        var temp_dataset = [0, 10, 5, 15, 10, 20, 15, 25, 20, 30, 25, 40];
-        var rain_dataset = [25, 20, 30, 22, 17, 10, 18, 26, 28, 26, 20, 32];
+        // var chart_labels = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        // var temp_dataset = [0, 10, 5, 15, 10, 20, 15, 25, 20, 30, 25, 40];
+        // var rain_dataset = [25, 20, 30, 22, 17, 10, 18, 26, 28, 26, 20, 32];
+
+        var chart_labels = ["September", "October"];
+        var temp_dataset = [25, 40];
+        var rain_dataset = [17, 32];
+
         var data = forecast_chart.config.data;
         data.datasets[0].data = temp_dataset;
         data.datasets[1].data = rain_dataset;

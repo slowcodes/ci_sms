@@ -74,161 +74,173 @@
                     </div>
                     <!--/.Content Header (Page header)--> 
                     <div class="body-content">
-                        <div class="card">
-                            <div class="alert alert-warning">
-                                On completion of this form, Teachers are adviced to fill out the employement history form immediately activating their account and they accessing their account for the first time.
-                            </div>
-                            <div class="card-header">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <h6 class="fs-17 font-weight-600 mb-0 text-success">Personal Information</h6>
-                                    </div>
-                                    <div class="text-right">
-                                        <div class="actions">
-                                            <a href="#" class="action-item"><i class="ti-reload"></i></a>
-                                            <div class="dropdown action-item" data-toggle="dropdown">
-                                                <a href="#" class="action-item"><i class="ti-more-alt"></i></a>
-                                                
+                        <form id="teachers_form" data-parsley-validate="">
+                            <div class="card">
+                                <div class="alert alert-warning">
+                                    On completing of this form, Teachers are adviced to fill out the employement history form immediately activating their account and they accessing their account for the first time.
+                                </div>
+                                <div class="card-header">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h6 class="fs-17 font-weight-600 mb-0 text-success">Personal Information</h6>
+                                        </div>
+                                        <div class="text-right">
+                                            <div class="actions">
+                                                <a href="#" class="action-item"><i class="ti-reload"></i></a>
+                                                <div class="dropdown action-item" data-toggle="dropdown">
+                                                    <a href="#" class="action-item"><i class="ti-more-alt"></i></a>
+                                                    
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="form-group row">
-                                    <label for="date" class="col-lg-3 col-sm-12 col-form-label font-weight-600">Staff ID</label>
-                                    <div class="col-lg-5 col-md-12 col-sm-12">
-                                        <input type="text" class="date form-control" id="date"/>
-                                        <!-- <div class="text-muted">Custom date format: <code>mm/dd/yyyy</code></div> -->
+                                <div class="card-body">
+                                    <div class="form-group row">
+                                        <label for="staff_id" class="col-lg-3 col-sm-12 col-form-label font-weight-600">Staff ID</label>
+                                        <div class="col-lg-5 col-md-12 col-sm-12">
+                                            <input type="text" class="date form-control" id="staff_id" name="staff_id" required/>
+                                            <!-- <div class="text-muted">Custom date format: <code>mm/dd/yyyy</code></div> -->
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="time" class="col-lg-3 col-sm-12 col-form-label font-weight-600">First Name</label>
-                                    <div class="col-lg-5 col-md-12 col-sm-12">
-                                        <input type="text" class="time form-control" id="time"/>
-                                        <!-- <div class="text-muted">Custom time format: <code>00:00:00</code></div> -->
+                                    <div class="form-group row">
+                                        <label for="first_name" class="col-lg-3 col-sm-12 col-form-label font-weight-600">First Name</label>
+                                        <div class="col-lg-5 col-md-12 col-sm-12">
+                                            <input type="text" class="time form-control" id="first_name" name="first_name" required/>
+                                            <!-- <div class="text-muted">Custom time format: <code>00:00:00</code></div> -->
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="date_time" class="col-lg-3 col-sm-12 col-form-label font-weight-600">Last Name</label>
-                                    <div class="col-lg-5 col-md-12 col-sm-12">
-                                        <input type="text" class="date_time form-control" id="date_time"/>
-                                        <!-- <div class="text-muted">Date &amp; Hour format: <code>mm/dd/yyyy & 00:00:00</code></div> -->
+                                    <div class="form-group row">
+                                        <label for="last_name" class="col-lg-3 col-sm-12 col-form-label font-weight-600">Last Name</label>
+                                        <div class="col-lg-5 col-md-12 col-sm-12">
+                                            <input type="text" class="date_time form-control" id="last_name" name="last_name" required/>
+                                            <!-- <div class="text-muted">Date &amp; Hour format: <code>mm/dd/yyyy & 00:00:00</code></div> -->
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="cep" class="col-lg-3 col-sm-12 col-form-label font-weight-600">Middle Name</label>
-                                    <div class="col-lg-5 col-md-12 col-sm-12">
-                                        <input type="text" class="cep form-control" id="cep"/>
-                                        <!-- <div class="text-muted">ZIP Code Mask <code>00000-000</code></div> -->
+                                    <div class="form-group row">
+                                        <label for="middle_name" class="col-lg-3 col-sm-12 col-form-label font-weight-600">Middle Name</label>
+                                        <div class="col-lg-5 col-md-12 col-sm-12">
+                                            <input type="text" class="cep form-control" id="middle_name" name="middle_name" required/>
+                                            <!-- <div class="text-muted">ZIP Code Mask <code>00000-000</code></div> -->
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="cep_with_callback" class="col-lg-3 col-sm-12 col-form-label font-weight-600">Gender</label>
-                                    <div class="col-lg-5 col-md-12 col-sm-12">
-                                        <input type="text" class="cep_with_callback form-control" id="cep_with_callback"/>
-                                        <!-- <div class="text-muted">With Callbacks (open console) Mask <code>00000-00</code></div> -->
+                                    <div class="form-group row">
+                                        <label for="sex" class="col-lg-3 col-sm-12 col-form-label font-weight-600">Gender</label>
+                                        <div class="col-lg-5 col-md-12 col-sm-12">
+                                            <select class="cep_with_callback form-control" id="sex" required>
+                                                <option></option>
+                                                <option value="Female">Female</option>
+                                                <option value="Male">Male</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="crazy_cep" class="col-lg-3 col-sm-12 col-form-label font-weight-600">Date of birth</label>
-                                    <div class="col-lg-5 col-md-12 col-sm-12">
-                                        <input type="text" class="crazy_cep form-control" id="crazy_cep"/>
-                                        <!-- <div class="text-muted">Crazy Zip Code Mask <code>0-00-00-00</code></div> -->
+                                    <div class="form-group row">
+                                        <label for="date_of_birth" class="col-lg-3 col-sm-12 col-form-label font-weight-600">Date of birth</label>
+                                        <div class="col-lg-5 col-md-12 col-sm-12">
+                                            <input type="date" class=" form-control" id="date_of_birth"/>
+                                            <!-- <div class="text-muted">Crazy Zip Code Mask <code>0-00-00-00</code></div> -->
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="money" class="col-lg-3 col-sm-12 col-form-label font-weight-600">Email Address</label>
-                                    <div class="col-lg-5 col-md-12 col-sm-12">
-                                        <input type="text" class="money form-control" id="money"/>
-                                        <!-- <div class="text-muted">Money Mask <code>000.000.000.000.000,00</code></div> -->
+                                    <div class="form-group row">
+                                        <label for="email" class="col-lg-3 col-sm-12 col-form-label font-weight-600">Email Address</label>
+                                        <div class="col-lg-5 col-md-12 col-sm-12">
+                                            <input type="email" class="money form-control" id="email" name="email" data-parsley-trigger="change"/>
+                                            <!-- <div class="text-muted">Money Mask <code>000.000.000.000.000,00</code></div> -->
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="placeholder" class="col-lg-3 col-sm-12 col-form-label font-weight-600">Contact Address (Postal)</label>
-                                    <div class="col-lg-5 col-md-12 col-sm-12">
-                                        <input type="text" class="placeholder form-control" id="placeholder"/>
-                                        <!-- <div class="text-muted">Placeholder Mask <code>00/00/0000</code></div> -->
+                                    <div class="form-group row">
+                                        <label for="address" class="col-lg-3 col-sm-12 col-form-label font-weight-600">Contact Address (Postal)</label>
+                                        <div class="col-lg-5 col-md-12 col-sm-12">
+                                            <input type="text" class="placeholder form-control" id="address" name="address" required/>
+                                            <!-- <div class="text-muted">Placeholder Mask <code>00/00/0000</code></div> -->
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="phone" class="col-lg-3 col-sm-12 col-form-label font-weight-600">Telephone</label>
-                                    <div class="col-lg-5 col-md-12 col-sm-12">
-                                        <input type="text" class="phone form-control" id="phone"/>
-                                        <!-- <div class="text-muted">Telephone Mask <code>0000-0000</code></div> -->
+                                    <div class="form-group row">
+                                        <label for="phone" class="col-lg-3 col-sm-12 col-form-label font-weight-600">Telephone</label>
+                                        <div class="col-lg-5 col-md-12 col-sm-12">
+                                            <input type="text" class="phone form-control" id="phone" name="phone" required/>
+                                            <!-- <div class="text-muted">Telephone Mask <code>0000-0000</code></div> -->
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="phone_with_ddd" class="col-lg-3 col-sm-12 col-form-label font-weight-600">Home town address</label>
-                                    <div class="col-lg-5 col-md-12 col-sm-12">
-                                        <input type="text" class="phone_with_ddd form-control" id="phone_with_ddd"/>
-                                        <!-- <div class="text-muted">Telephone with Code Area Mask<code> (00) 0000-0000</code></div> -->
+                                    <div class="form-group row">
+                                        <label for="home_town" class="col-lg-3 col-sm-12 col-form-label font-weight-600">Home town address</label>
+                                        <div class="col-lg-5 col-md-12 col-sm-12">
+                                            <input type="text" class="phone_with_ddd form-control" id="home_town" name="home_town" required/>
+                                            <!-- <div class="text-muted">Telephone with Code Area Mask<code> (00) 0000-0000</code></div> -->
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="phone_us" class="col-lg-3 col-sm-12 col-form-label font-weight-600">State of origin</label>
-                                    <div class="col-lg-5 col-md-12 col-sm-12">
-                                        <input type="text" class="phone_us form-control" id="phone_us"/>
-                                        <!-- <div class="text-muted">US Telephone Mask<code> (000) 000-0000</code></div> -->
+                                    <div class="form-group row">
+                                        <label for="state" class="col-lg-3 col-sm-12 col-form-label font-weight-600">State of origin</label>
+                                        <div class="col-lg-5 col-md-12 col-sm-12">
+                                            <select class="phone_us form-control" id="state" name="state" required>
+                                                <option value="ABIA">ABIA</option>
+                                                <option value="ADAMAWA">ADAMAWA</option>
+                                            </select>
+                                            <!-- <div class="text-muted">US Telephone Mask<code> (000) 000-0000</code></div> -->
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="sp_celphones" class="col-lg-3 col-sm-12 col-form-label font-weight-600">Highest Qualification</label>
-                                    <div class="col-lg-5 col-md-12 col-sm-12">
-                                        <input type="text" class="sp_celphones form-control" id="sp_celphones"/>
-                                        <!--<div class="text-muted">São Paulo Celphones Mask<code>(000) 000-0000</code></div>-->
-                                    </div>
-                                </div>
+                                    
 
-                                <h5 class="font-weight-600 text-success">Access Credentails</h5>
+                                    <h5 class="font-weight-600 text-success">Access Credentails</h5>
 
-                                <div class="form-group row">
-                                    <label for="mixed" class="col-lg-3 col-sm-12 col-form-label font-weight-600">Username</label>
-                                    <div class="col-lg-5 col-md-12 col-sm-12">
-                                        <input type="text" class="mixed form-control" id="mixed"/>
-                                        <!-- <div class="text-muted">Mixed Type Mask<code> AAA 000-S0S</code></div> -->
+                                    <div class="form-group row">
+                                        <label for="username" class="col-lg-3 col-sm-12 col-form-label font-weight-600">Username</label>
+                                        <div class="col-lg-5 col-md-12 col-sm-12">
+                                            <input type="text" class="mixed form-control" id="username" name="username" required/>
+                                            <!-- <div class="text-muted">Mixed Type Mask<code> AAA 000-S0S</code></div> -->
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="cpf" class="col-lg-3 col-sm-12 col-form-label font-weight-600">Password</label>
-                                    <div class="col-lg-5 col-md-12 col-sm-12">
-                                        <input type="text" class="cpf form-control" id="cpf"/>
-                                        <!-- <div class="text-muted">CPF Mask<code> 000.000.000-00</code></div> -->
+                                    <div class="form-group row">
+                                        <label for="password" class="col-lg-3 col-sm-12 col-form-label font-weight-600">Password</label>
+                                        <div class="col-lg-5 col-md-12 col-sm-12">
+                                            <input type="text" class="cpf form-control" id="password" name="password" required/>
+                                            <!-- <div class="text-muted">CPF Mask<code> 000.000.000-00</code></div> -->
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="cnpj" class="col-lg-3 col-sm-12 col-form-label font-weight-600">Confirm password</label>
-                                    <div class="col-lg-5 col-md-12 col-sm-12">
-                                        <input type="text" class="cnpj form-control" id="cnpj"/>
-                                        <!-- <div class="text-muted">CNPJ Mask<code> 00.000.000/0000-00</code></div> -->
+                                    <div class="form-group row">
+                                        <label for="conf_password" class="col-lg-3 col-sm-12 col-form-label font-weight-600">Confirm password</label>
+                                        <div class="col-lg-5 col-md-12 col-sm-12">
+                                            <input type="text" class="cnpj form-control" id="conf_password" name="conf_password" required/>
+                                            <!-- <div class="text-muted">CNPJ Mask<code> 00.000.000/0000-00</code></div> -->
+                                        </div>
                                     </div>
-                                </div>
-                                <h5 class="font-weight-600 text-success">Academic Information</h5>
+                                    <h5 class="font-weight-600 text-success">Academic Information</h5>
 
-                                <div class="form-group row">
-                                    <label for="ip_address" class="col-lg-3 col-sm-12 col-form-label font-weight-600">Highest Qualification</label>
-                                    <div class="col-lg-5 col-md-12 col-sm-12">
-                                        <input type="text" class="ip_address form-control" id="ip_address"/>
-                                        <!-- <div class="text-muted">IP Address Mask<code> 0ZZ.0ZZ.0ZZ.0ZZ</code></div> -->
+                                    <div class="form-group row">
+                                        <label for="qualification" class="col-lg-3 col-sm-12 col-form-label font-weight-600">Highest Qualification</label>
+                                        <div class="col-lg-5 col-md-12 col-sm-12">
+                                            <select class="sp_celphones form-control" id="qualification" name="qualification" required>
+                                                <option value="B.sc">B.sc</option>
+                                                <option value="M.sc">M.sc</option>
+                                                <option value="Phd">Phd</option>
+                                                <option value="B.Ed">B.Ed</option>
+                                                <option value="M.Ed">M.Ed</option>
+                                                <option value="NCE">NCE</option>
+                                                <option value="HND">HND</option>
+                                                <option value="OND">OND</option>
+                                            </select>
+                                            <!--<div class="text-muted">São Paulo Celphones Mask<code>(000) 000-0000</code></div>-->
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="qualification_year" class="col-lg-3 col-sm-12 col-form-label font-weight-600">Year Obtained</label>
+                                        <div class="col-lg-5 col-md-12 col-sm-12">
+                                            <input type="text" class="clear-if-not-match form-control" id="qualification_year" name="qualification_year" required/>
+                                            <!-- <div class="text-muted">With Clear If Not Match Option Mask<code> 00/00/0000</code></div> -->
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group row">
+                                    
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label for="clear-if-not-match" class="col-lg-3 col-sm-12 col-form-label font-weight-600">Year Obtained</label>
-                                    <div class="col-lg-5 col-md-12 col-sm-12">
-                                        <input type="text" class="clear-if-not-match form-control" id="clear-if-not-match"/>
-                                        <!-- <div class="text-muted">With Clear If Not Match Option Mask<code> 00/00/0000</code></div> -->
-                                    </div>
-                                </div>
-                                
-                                <div class="form-group row">
-                                
+                                <div class="card-footer">
+                                    <button type="submit" class="btn btn-primary mr-1">Submit</button>
+                                    <button type="cancel" class="btn btn-danger">Cancel</button>
                                 </div>
                             </div>
-                            <div class="card-footer">
-                                <button type="button" class="btn btn-primary mr-1">Submit</button>
-                                <button type="button" class="btn btn-danger">Cancel</button>
-                            </div>
-                        </div>
+                        </form>
                     </div><!--/.body content-->
                 </div><!--/.main content-->
                 <?php
@@ -244,6 +256,20 @@
         <script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
         <script src="/assets/plugins/metisMenu/metisMenu.min.js"></script>
         <script src="/assets/plugins/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
+        <script src="/assets/plugins/parsley/parsley.min.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                $('#teacher-form').parsley().on('field:validated', function() {
+                    var ok = $('.parsley-error').length === 0;
+                    $('.bs-callout-info').toggleClass('hidden', !ok);
+                    $('.bs-callout-warning').toggleClass('hidden', ok);
+                })
+                .on('form:submit', function() {
+                    console.log("submited")
+                    return false; // Don't submit form for this demo
+                });
+            });
+        </script>
         <!-- Third Party Scripts(used by this page)-->
         <!-- <script src="/assets/plugins/jQuery-mask-plugin/jquery.mask.min.js"></script>
         <script src="/assets/plugins/jQuery-mask-plugin/examples.js"></script> -->

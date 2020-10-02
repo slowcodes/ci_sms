@@ -125,8 +125,11 @@
                                                 echo "<td>".$k."</td>";
                                                 echo "<td></td>";
                                                 echo "<td>".$student['roll_id']."</td>";
-                                                echo "<td>".$student['user_id']."</td>";
-                                                echo "<td>".$student['user_id']."</td>";
+                                                echo "<td>".$student['first_name'].' '.$student['last_name']."</td>";
+                                                echo "<td>".$student['sex']."</td>";
+                                                echo "<td>"."<button type='button' class='btn btn-primary btn-circle mb-2 mr-1'><i class='fas fa-list'></i></button>
+                                                <button type='button' class='btn btn-warning btn-circle mb-2 mr-1'><i class='fas fa-edit'></i></button>
+                                                <button type='button' class='btn btn-danger btn-circle mb-2 mr-1'><i class='fas fa-trash-alt'></i></button>"."</td>";
                                                 echo "</tr>";
                                             }
                                         ?>

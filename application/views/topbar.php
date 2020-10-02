@@ -100,7 +100,7 @@
                                         <a href="#" class="dropdown-item"><i class="typcn typcn-edit"></i> Edit Profile</a>
                                         <a href="#" class="dropdown-item"><i class="typcn typcn-arrow-shuffle"></i> Activity Logs</a>
                                         <a href="#" class="dropdown-item"><i class="typcn typcn-cog-outline"></i> Account Settings</a>
-                                        <a href="#" class="dropdown-item"><i class="typcn typcn-key-outline"></i> Sign Out</a>
+                                        <a href="/index.php/login/logout" class="dropdown-item"><i class="typcn typcn-key-outline"></i> Sign Out</a>
                                     </div><!--/.dropdown-menu -->
                                 </li>
                             </ul><!--/.navbar nav-->

@@ -185,7 +185,7 @@
                     </form>
                     <div class="search-suggestions">
                         <h6 class="font-weight-600">Search Suggestions</h6>
-                        <ul class="list-unstyled mb-0">
+                        <!-- <ul class="list-unstyled mb-0">
                             <li>
                                 <a class="list-link" href="#">
                                     <i class="ti-search fs-16"></i>
@@ -216,7 +216,7 @@
                                     <span>smasung galaxy 10</span> in Phones
                                 </a>
                             </li>
-                        </ul>
+                        </ul> -->
                     </div>
                 </div>
 
@@ -262,7 +262,7 @@
                                                         Payments
                                                     </h6>
                                                     <h3 class="mb-0 fs-16 font-weight-bold">
-                                                    &#x20A6 210.5k
+                                                    &#x20A6 0.00k
                                                     </h3>
                                                 </a>
                                             </li>
@@ -282,7 +282,7 @@
                                                         Attendance
                                                     </h6>
                                                     <h3 class="mb-0 fs-16 font-weight-bold">
-                                                        80.7%
+                                                        00.7%
                                                     </h3>
                                                 </a>
                                             </li>
@@ -305,8 +305,8 @@
                                             <i class="typcn typcn-device-tablet"></i>
                                         </div>
                                         <p class="card-category text-uppercase fs-10 font-weight-bold text-muted">Used Space</p>
-                                        <h3 class="card-title fs-18 font-weight-bold">0.012/1
-                                            <small>TB</small>
+                                        <h3 class="card-title fs-18 font-weight-bold">0.012/30
+                                            <small>GB</small>
                                         </h3>
                                     </div>
                                     <div class="card-footer p-3">
@@ -340,7 +340,7 @@
                                             <i class="typcn typcn-info-outline"></i>
                                         </div>
                                         <p class="card-category text-uppercase fs-10 font-weight-bold text-muted">Teachers</p>
-                                        <h3 class="card-title fs-21 font-weight-bold">75</h3>
+                                        <h3 class="card-title fs-21 font-weight-bold">0</h3>
                                     </div>
                                     <div class="card-footer p-3">
                                         <div class="stats">
@@ -356,7 +356,7 @@
                                             <i class="fas fa-address-book"></i>
                                         </div>
                                         <p class="card-category text-uppercase fs-10 font-weight-bold text-muted">Students</p>
-                                        <h3 class="card-title fs-21 font-weight-bold">+245</h3>
+                                        <h3 class="card-title fs-21 font-weight-bold">5</h3>
                                     </div>
                                     <div class="card-footer p-3">
                                         <div class="stats">
@@ -559,29 +559,42 @@
                                                 <tr>
                                                     <th>Image</th>
                                                     <th>Name</th>
-                                                    <th>Phone</th>
-                                                    <th>Address</th>
+                                                    <th>Username</th>
+                                                    <th>Sex</th>
                                                     <th>Attendance</th>
-                                                    <th>City</th>
+                                                    <th>Access level</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
+                                                <?php
+
+                                                    foreach($users As $user){
+
+                                                        echo "<tr>";
+                                                        echo "<td><div class='avatar-group'>
+                                                                <a href='user_profile.html' class='avatar avatar-xs' data-toggle='tooltip' title='Melissa Ayre'>
+                                                                    <img src='/assets/dist/img/avatar-1.jpg' class='avatar-img rounded-circle' alt='...'>
+                                                                </a>
+                                                    
+                                                            </div></td>";
+                                                        echo "<td>".$user['first_name'].' '.$user['last_name']."</td>";
+                                                        echo "<td style='text-transform:uppercase'>".$user['username']."</td>";
+                                                        echo "<td>".$user['sex']."</td>";
+                                                        echo "<td><div class=sparkline6></div></td>";
+                                                        echo "<td>".$user['account_type']."</td>";
+                                                        echo "<td><a href='#' class='btn btn-success-soft btn-sm'><i class='far fa-eye'></i></a></td>";  
+                                                        echo "</tr>";
+                                                    }
+                                                ?>
+
+                                                <!-- <tr>
                                                     <td>
                                                         <div class="avatar-group">
                                                             <a href="user_profile.html" class="avatar avatar-xs" data-toggle="tooltip" title="Melissa Ayre">
                                                                 <img src="/assets/dist/img/avatar-1.jpg" class="avatar-img rounded-circle" alt="...">
                                                             </a>
-                                                            <!-- <a href="user_profile.html" class="avatar avatar-xs" data-toggle="tooltip" title="Karen Robinson">
-                                                                <img src="/assets/dist/img/avatar-2.jpg" class="avatar-img rounded-circle" alt="...">
-                                                            </a>
-                                                            <a href="user_profile.html" class="avatar avatar-xs" data-toggle="tooltip" title="Miyah Myles">
-                                                                <img src="/assets/dist/img/avatar-3.jpg" class="avatar-img rounded-circle" alt="...">
-                                                            </a>
-                                                            <a href="user_profile.html" class="avatar avatar-xs" data-toggle="tooltip" title="Daniela Dewitt">
-                                                                <img src="/assets/dist/img/avatar-4.jpg" class="avatar-img rounded-circle" alt="...">
-                                                            </a> -->
+                                                
                                                         </div>
                                                     </td>
                                                     <td>Naeem Khan</td>
@@ -596,9 +609,9 @@
                                                 <tr>
                                                     <td>
                                                         <div class="avatar-group">
-                                                            <!-- <a href="user_profile.html" class="avatar avatar-xs" data-toggle="tooltip" title="Miyah Myles">
+                                                            <a href="user_profile.html" class="avatar avatar-xs" data-toggle="tooltip" title="Miyah Myles">
                                                                 <img src="/assets/dist/img/avatar-3.jpg" class="avatar-img rounded-circle" alt="...">
-                                                            </a> -->
+                                                            </a>
                                                             <a href="user_profile.html" class="avatar avatar-xs" data-toggle="tooltip" title="Daniela Dewitt">
                                                                 <img src="/assets/dist/img/avatar-2.jpg" class="avatar-img rounded-circle" alt="...">
                                                             </a>
@@ -616,15 +629,15 @@
                                                 <tr>
                                                     <td>
                                                         <div class="avatar-group">
-                                                            <!-- <a href="user_profile.html" class="avatar avatar-xs" data-toggle="tooltip" title="Karen Robinson">
+                                                            <a href="user_profile.html" class="avatar avatar-xs" data-toggle="tooltip" title="Karen Robinson">
                                                                 <img src="/assets/dist/img/avatar-2.jpg" class="avatar-img rounded-circle" alt="...">
-                                                            </a> -->
+                                                            </a>
                                                             <a href="user_profile.html" class="avatar avatar-xs" data-toggle="tooltip" title="Miyah Myles">
                                                                 <img src="/assets/dist/img/avatar-3.jpg" class="avatar-img rounded-circle" alt="...">
                                                             </a>
-                                                            <!-- <a href="user_profile.html" class="avatar avatar-xs" data-toggle="tooltip" title="Daniela Dewitt">
+                                                            <a href="user_profile.html" class="avatar avatar-xs" data-toggle="tooltip" title="Daniela Dewitt">
                                                                 <img src="/assets/dist/img/avatar-4.jpg" class="avatar-img rounded-circle" alt="...">
-                                                            </a> -->
+                                                            </a>
                                                         </div>
                                                     </td>
                                                     <td>Tanjil Ahmed</td>
@@ -639,12 +652,12 @@
                                                 <tr>
                                                     <td>
                                                         <div class="avatar-group">
-                                                            <!-- <a href="user_profile.html" class="avatar avatar-xs" data-toggle="tooltip" title="Melissa Ayre">
+                                                            <a href="user_profile.html" class="avatar avatar-xs" data-toggle="tooltip" title="Melissa Ayre">
                                                                 <img src="/assets/dist/img/avatar-1.jpg" class="avatar-img rounded-circle" alt="...">
                                                             </a>
                                                             <a href="user_profile.html" class="avatar avatar-xs" data-toggle="tooltip" title="Karen Robinson">
                                                                 <img src="/assets/dist/img/avatar-2.jpg" class="avatar-img rounded-circle" alt="...">
-                                                            </a> -->
+                                                            </a>
                                                             <a href="user_profile.html" class="avatar avatar-xs" data-toggle="tooltip" title="Daniela Dewitt">
                                                                 <img src="/assets/dist/img/avatar-4.jpg" class="avatar-img rounded-circle" alt="...">
                                                             </a>
@@ -662,18 +675,18 @@
                                                 <tr>
                                                     <td>
                                                         <div class="avatar-group">
-                                                            <!-- <a href="user_profile.html" class="avatar avatar-xs" data-toggle="tooltip" title="Melissa Ayre">
+                                                            <a href="user_profile.html" class="avatar avatar-xs" data-toggle="tooltip" title="Melissa Ayre">
                                                                 <img src="/assets/dist/img/avatar-1.jpg" class="avatar-img rounded-circle" alt="...">
-                                                            </a> -->
+                                                            </a>
                                                             <a href="user_profile.html" class="avatar avatar-xs" data-toggle="tooltip" title="Karen Robinson">
                                                                 <img src="/assets/dist/img/avatar-2.jpg" class="avatar-img rounded-circle" alt="...">
                                                             </a>
-                                                            <!-- <a href="user_profile.html" class="avatar avatar-xs" data-toggle="tooltip" title="Miyah Myles">
+                                                            <a href="user_profile.html" class="avatar avatar-xs" data-toggle="tooltip" title="Miyah Myles">
                                                                 <img src="/assets/dist/img/avatar-3.jpg" class="avatar-img rounded-circle" alt="...">
                                                             </a>
                                                             <a href="user_profile.html" class="avatar avatar-xs" data-toggle="tooltip" title="Daniela Dewitt">
                                                                 <img src="/assets/dist/img/avatar-4.jpg" class="avatar-img rounded-circle" alt="...">
-                                                            </a> -->
+                                                            </a>
                                                         </div>
                                                     </td>
                                                     <td>Jahangir Alam</td>
@@ -684,7 +697,7 @@
                                                     </td>
                                                     <td>Chittagong</td>
                                                     <td><a href="#" class="btn btn-success-soft btn-sm"><i class="far fa-eye"></i></a></td>
-                                                </tr>
+                                                </tr> -->
                                             </tbody>
                                         </table>
                                     </div>

@@ -95,8 +95,8 @@
                                             <tr>
                                                 <th>#</th>
                                                 <th>Photo</th>
-                                                <th>Reg. #</th>
                                                 <th>Name</th>
+                                                <th>Address</th>
                                                 <th>Sex</th>
                                                 <th>Action</th>
                                             </tr>
@@ -107,8 +107,8 @@
                                             <tr>
                                                 <th>#</th>
                                                 <th>Photo</th>
-                                                <th>Reg. #</th>
                                                 <th>Name</th>
+                                                <th>Address</th>
                                                 <th>Sex</th>
                                                 <th>Action</th>
                                             </tr>

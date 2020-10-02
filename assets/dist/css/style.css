@@ -4,9 +4,8 @@ html {
     min-height: 100%
 }
 
-.parsley-type{
+.parsley-type, .parsley-required {
     color:red;
-    font-style:italic;
 }
 
 body {

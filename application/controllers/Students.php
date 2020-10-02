@@ -6,11 +6,11 @@ class Students extends CI_Controller {
     function __construct()
     {
         parent::__construct();
-        $this->load->model('User_model'); 
         $this->load->helper('cookie');
         $this->load->library('session');
         $this->load->library('Gateman');
-        $this->load->model('Student_model');
+        $this->load->model(array('User_model','Student_model','Parent_model','Academic_level_model', 'Classroom_model'));
+
 
         $this->data = array(
             'username'=>$this->session->userdata('username'),
@@ -18,7 +18,10 @@ class Students extends CI_Controller {
             'last_name'=>$this->session->userdata('last_name'),
             'token'=> $this->session->userdata('token'),
             'user_type'=> $this->session->userdata('user_type'),
-            'students' => $this->Student_model->get_all_students()
+            'students' => $this->Student_model->get_all_students(),
+            'parents' => $this->Parent_model->get_all_parents(),
+            'levels'=>$this->Academic_level_model->get_all_academic_levels(),
+            'classrooms' =>$this->Classroom_model->get_all_classrooms()
         );
     }
 
@@ -29,7 +32,43 @@ class Students extends CI_Controller {
     }
 
     public function add(){
-
+        //array_push($data, $parents);
         $this->load->view('administrator/add_student.php', $this->data);
+    }
+
+
+    public function process_add(){
+
+        // if(isset($_POST) && count($_POST) > 0)     
+        // {   
+
+            $params = array(
+				'password' => md5($this->input->post('password')),
+				'first_name' => $this->input->post('first_name'),
+				'last_name' => $this->input->post('last_name'),
+				'username' => $this->input->post('username'),
+				'account_type' => 'Student',
+				'active' => '1',
+				'middle_name' => $this->input->post('middle_name'),
+				'sex' => $this->input->post('sex'),
+            );
+            $user_id = $this->User_model->add_user($params);
+            
+            $params = array(
+                'user_id'=>$user_id,
+				'dob' => $this->input->post('dob'),
+				'religion' => $this->input->post('religion'),
+				'blood_group' => $this->input->post('blood_group'),
+				'classroom_id' => $this->input->post('classroom_id'),
+				'roll_id' => $this->input->post('roll_id'),
+				'parent_id' => $this->input->post('parent_id'),
+				'parent_relationship' => $this->input->post('parent_relationship'),
+            );
+            $student_id = $this->Student_model->add_student($params);
+            
+            $return = array('error'=>false, 'msg'=>'Congratulations student');
+            echo json_encode($return);
+            //redirect('user/index');
+        //}
     }
 }

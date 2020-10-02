@@ -65,8 +65,8 @@
                             <div class="media">
                                 <div class="header-icon text-success mr-3"><i class="typcn typcn-upload"></i></div>
                                 <div class="media-body">
-                                    <h1 class="font-weight-bold">File upload</h1>
-                                    <small>DropzoneJS is an open source library that provides drag’n’drop file uploads with image previews.</small>
+                                    <h1 class="font-weight-bold">Upload learning Resources</h1>
+                                    <small> Drag and drop learning resources intended for students with image previews.</small>
                                 </div>
                             </div>
                         </div>
@@ -74,10 +74,14 @@
                     <!--/.Content Header (Page header)--> 
                     <div class="body-content">
                         <div class="card">
+                            <div class="alert alert-warning">
+                                <strong>E-learning</strong> supported content types includes .pdf, .mp4, .docx, .txt and .mpeg. This means 
+                                    that you can drag and drop a files of these type onto the upload box, and the file gets uploaded to the server via AJAX
+                            </div>
                             <div class="card-header">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div>
-                                        <h6 class="fs-17 font-weight-600 mb-0">Dropzone.js</h6>
+                                        <h6 class="fs-17 font-weight-600 mb-0">Content upload form</h6>
                                     </div>
                                     <div class="text-right">
                                         <div class="actions">
@@ -92,16 +96,37 @@
                                             </div>
                                         </div>
                                     </div>
+
+                                    
                                 </div>
                             </div>
                             <div class="card-body">
-                                <p><strong>Dropzone.js</strong> is a light weight JavaScript library that turns an HTML element into a dropzone. This means 
-                                    that a user can drag and drop a file onto it, and the file gets uploaded to the server via AJAX.</p>
-                                <form action="#" class="dropzone" id="dropzoneForm">
-                                    <div class="fallback">
+                                
+                                <form action="#" class="dropzone" id="dropzoneForm" >
+                                    <div class="fallback " >
                                         <input name="file" type="file" multiple />
                                     </div>
+
+                                    
                                 </form>
+                                <!-- <div class="col-md-12"> To be called on si=ubmission
+                                    <div class="form-group">
+                                        <label  for="religion">Class</label>
+                                        <select class="form-control" id="religion" required name="religion">
+                                            <option ></option>
+                                            <option value="African Traditional Religion"> African Traditional Religion</option>
+                                            <option value="Buduism">Buduism</option>
+                                            <option value="Christainity">Christainity</option>
+                                            <option value="Hinduism">Hinduism</option>
+                                            <option value="Islam">Islam</option>
+                                        </select>
+                                    </div>
+                                </div> -->
+                                <div class="card-footer">
+                                    <button type="submit" class="btn btn-primary mr-1">Submit</button>
+                                    <button type="cancle" class="btn btn-danger">Cancel</button>
+                                </div>
+
                             </div>
                             <div class="card-footer">
                                 <p class="mb-0">All avalible options and full documentation you can find: <a target="_blank" href="http://www.dropzonejs.com/#configuration-options">http://www.dropzonejs.com/#configuration-options</a> </p>

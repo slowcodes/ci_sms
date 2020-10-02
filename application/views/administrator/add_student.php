@@ -77,7 +77,7 @@
                        
                         <div class="row">
                             <div class="col-md-12 col-lg-12">
-                                <form id="student-form" data-parsley-validate="">
+                                <form id="student-form" data-parsley-validate="" method="post">
                                     <div class="card mb-4">
                                         <div class="alert alert-warning">
                                             This form will require you to select a parent/gurdian before submitting it. A Parents/Guardian of a student must be registered for a new student before registering a new student. To register a parent/gurdian please click <a href="/index.php/parents/add">here</a>
@@ -96,25 +96,25 @@
                                             </div>
                                         </div>
                                         <div class="card-body">
-                                        
+                                            <div id="processing"></div>
                                             <div class="form-row">
                                                 <div class="col-md-4 mb-3">
                                                     <div class="form-group">
                                                         <label for="first_name" class="font-weight-600">First Name</label>
-                                                        <input type="text" class="form-control" id="first_name" aria-describedby="emailHelp" placeholder="First name" required>
+                                                        <input type="text" class="form-control" id="first_name" name="first_name" aria-describedby="emailHelp" placeholder="First name" required>
                                                         <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4 mb-3">
                                                     <div class="form-group">
                                                         <label for="last_name" class="font-weight-600">Last Name</label>
-                                                        <input type="text" class="form-control" id="last_name" placeholder="Last name ">
+                                                        <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last name " required="">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4 mb-3">
                                                     <div class="form-group form-check">
                                                         <label class="font-weight-600"  for="middle_name">Middle Name</label>
-                                                        <input type="text" class="form-control" id="middle_name" aria-describedby="emailHelp" placeholder="Middle name">
+                                                        <input type="text" class="form-control" id="middle_name" name="middle_name" placeholder="Middle name" required>
                                                     </div>
                                                 </div>
                                             </div>
@@ -123,24 +123,24 @@
                                                 <div class="col-md-4 mb-3">
                                                     <div class="form-group">
                                                         <label for="example-date-input" class="font-weight-600">Date of birth</label>
-                                                        <input class="form-control" type="date" value="2011-08-19" id="example-date-input" required>                                                    
+                                                        <input class="form-control" type="date" value="2011-08-19" id="example-date-input" name="dob" required>                                                    
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4 mb-3">
                                                     <div class="form-group">
                                                         <label for="sex" class="font-weight-600">Sex</label>
-                                                        <select class="form-control" id="sex" required=""> 
-                                                            <option>Choose sex</option>
-                                                            <option>Female</option>
-                                                            <option>Male</option>
+                                                        <select class="form-control" id="sex" name="sex" required=""> 
+                                                            <option> </option>
+                                                            <option value="Female">Female</option>
+                                                            <option value="Male">Male</option>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4 mb-3">
                                                     <div class="form-group form-check">
-                                                        <label class="font-weight-600"  for="middle_name">Religion</label>
-                                                        <select class="form-control" id="sex" aria-describedby="emailHelp" required="">
-                                                            <option>Choose Religion</option>
+                                                        <label class="font-weight-600"  for="religion">Religion</label>
+                                                        <select class="form-control" id="religion" name="religion" required="">
+                                                            <option> </option>
                                                             <option>African Traditional Religion</option>
                                                             <option>Buduism</option>
                                                             <option>Christainity</option>
@@ -156,30 +156,31 @@
                                                 <div class="col-md-4 mb-3">
                                                     <div class="form-group">
                                                         <label for="email" class="font-weight-600">Email Address</label>
-                                                        <input class="form-control"  type="email" id="email" required="" name="email" data-parsley-trigger="change">                                                    </div>
+                                                        <input class="form-control"  type="email" name="email" id="email"  required="" name="email" data-parsley-trigger="change">                                                    </div>
                                                 </div>
                                                 <div class="col-md-4 mb-3">
                                                     <div class="form-group">
-                                                        <label for="sex" class="font-weight-600">Blood Group</label>
-                                                        <select class="form-control" id="sex">
-                                                            <option>Choose blood group</option>
-                                                            <option>A+</option>
-                                                            <option>0+</option>
-                                                            <option>B+</option>
-                                                            <option>AB+</option>
-                                                            <option>A-</option>
-                                                            <option>0-</option>
-                                                            <option>B-</option>
-                                                            <option>AB-</option>
+                                                        <label for="blood_groug" class="font-weight-600">Blood Group</label>
+                                                        <select class="form-control" id="blood_group" name="blood_group" required>
+                                                            <option> </option>
+                                                            <option value="A+">A+</option>
+                                                            <option value="O+">0+</option>
+                                                            <option value="B+">B+</option>
+                                                            <option value="AB+">AB+</option>
+                                                            <option value="A-">A-</option>
+                                                            <option value="O-">0-</option>
+                                                            <option value="B-">B-</option>
+                                                            <option value="AB-">AB-</option>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4 mb-3">
                                                     <div class="form-group form-check">
                                                         <label class="font-weight-600"  for="nationality">Nationality</label>
-                                                        <select class="form-control" id="nationality" aria-describedby="emailHelp">
-                                                            <option>Choose nationality</option>
-                                                            <option>Nigeria</option>
+                                                        <select class="form-control" id="nationality" name="nationality" required>
+                                                            <option></option>
+                                                            <option value="Nigeria">Nigeria</option>
+                                                            <option value="Non-Nigerian">Non-Nigerian</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -192,20 +193,20 @@
                                                 <div class="col-md-4 mb-3">
                                                     <div class="form-group">
                                                         <label for="username" class="font-weight-600">Username</label>
-                                                        <input type="text" class="form-control" id="username" required="">
+                                                        <input type="text" class="form-control" id="username" name="username"  required="">
                                                         <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4 mb-3">
                                                     <div class="form-group">
                                                         <label for="password" class="font-weight-600">Password</label>
-                                                        <input type="password" class="form-control" id="password" required="">
+                                                        <input type="password" class="form-control" id="password" name="password" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4 mb-3">
                                                     <div class="form-group form-check">
                                                         <label class="font-weight-600"  for="conf_password">Confirm password</label>
-                                                        <input type="password" class="form-control" id="conf_password" aria-describedby="emailHelp" placeholder="Middle name">
+                                                        <input type="password" class="form-control" name="conf_password" id="conf_password" required>
                                                     </div>
                                                 </div>
                                             </div>
@@ -214,33 +215,77 @@
                                             <div class="form-row">
                                                 <div class="col-md-4 mb-3">
                                                     <div class="form-group">
-                                                        <label for="example-date-input" class="font-weight-600">Roll #</label>
-                                                        <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+                                                        <label for="roll_number" class="font-weight-600">Roll #</label>
+                                                        <input class="form-control" type="text" name="roll_number" id="roll_number" required >
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4 mb-3">
                                                     <div class="form-group">
                                                         <label for="academic_level" class="font-weight-600">Academic level</label>
-                                                        <select class="form-control" id="academic_level">
-                                                            <option>Choose level</option>
-                                                            <option>JSS 1</option>
-                                                            <option>JSS 2</option>
+                                                        <select class="form-control" id="academic_level" name="academic_level" required>
+                                                            <option> </option>
+                                                            <?php 
+                                                                foreach($levels as $level){
+                                                                    echo "<option value='".$level['id']."'>".$level['level']."</option>";
+                                                                }
+                                                            ?>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4 mb-3">
                                                     <div class="form-group form-check">
                                                         <label class="font-weight-600"  for="aclass">Class</label>
-                                                        <select class="form-control" id="aclass" required="">
-                                                            <option>Choose class</option>
+                                                        <select class="form-control" id="aclass" name="class_id" >
+                                                            <option> </option>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 
                                             </div>
 
+
+                                            <h5 class="font-weight-600 text-success">Other Registration Requirements</h5>
+                                            <div class="form-row">
+                                                <div class="col-md-4 mb-3">
+                                                    <div class="form-group">
+                                                        <label for="example-date-input" class="font-weight-600">Parent/Guardian</label>
+                                                        <select class="form-control" id="parent">
+                                                            <option>Choose Parent</option>
+                                                            <?php 
+                                                                foreach($parents as $parent){
+                                                                    echo "<option value='".$parent['id']."'>".$parent['first_name'].' '.$parent['last_name']."</option>";
+                                                                }
+                                                            ?>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 mb-3">
+                                                    <div class="form-group">
+                                                        <label for="example-date-input" class="font-weight-600">Relationship</label>
+                                                        <select class="form-control" id="sex">
+                                                            <option>Choose Relationship</option>
+                                                            <option>Brother</option>
+                                                            <option>Father</option>
+                                                            <option>Mother</option>
+                                                            <option>Sister</option>
+                                                            <option>Uncle</option>
+                                                            <option>Aunt</option>
+                                                            <option>Nephew</option>
+                                                            <option>Nice</option>
+                                                        </select>                                                    
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 mb-3">
+                                                    <div class="form-group">
+                                                        <label for="academic_level" class="font-weight-600">Upload Photo</label>
+                                                        <input type="file" id="photo" name="photo" />
+                                                    </div>
+                                                </div>
+                                                
+                                                
+                                            </div>
                                             <div class="card-footer">
-                                                <button type="submit" class="btn btn-primary mr-1">Submit</button>
+                                                <button type="submit" class="btn btn-success mr-1">Submit</button>
                                                 <button type="cancel" class="btn btn-danger">Cancel</button>
                                             </div>
                                         </div>
@@ -272,6 +317,29 @@
                 })
                 .on('form:submit', function() {
                     console.log("submited")
+
+                    document.body.scrollTop = 0; // For Safari
+                    document.documentElement.scrollTop = 0; //
+                    
+                    $('#processing').html("<img src='/assets/img/ajax-loader.gif' /></center>");
+                    //e.preventDefault();
+                    formdata = $('#student-form').serialize();
+                    
+                    $.post("/index.php/students/process_add", formdata, 
+                    function(result, status){
+                        
+                        data = JSON.parse(result);
+                        if(data.error==true){
+                            $('#processing').html("<div class='alert alert-danger'><strong>Opps!!!</strong> "+data.msg+"</div>");
+                        }
+                        else{
+                            $('#processing').html("<div class='alert alert-success'><strong>Congratulations!</strong> "+data.msg+"</div>");
+                            document.getElementById("student-form").reset();   
+                            //window.location.href = data.route;
+                        }
+                    });
+                    
+                    //});
                     return false; // Don't submit form for this demo
                 });
             });

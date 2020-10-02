@@ -10,13 +10,15 @@ class Dashboard extends CI_Controller {
         $this->load->helper('cookie');
         $this->load->library('session');
         $this->load->library('Gateman');
+        $this->load->model('User_model');
 
         $this->data = array(
             'username'=>$this->session->userdata('username'),
             'first_name'=>$this->session->userdata('first_name'),
             'last_name'=>$this->session->userdata('last_name'),
             'token'=> $this->session->userdata('token'),
-            'user_type'=> $this->session->userdata('user_type')
+            'user_type'=> $this->session->userdata('user_type'),
+            'users' => $this->User_model->get_all_users()
         );
     }
 

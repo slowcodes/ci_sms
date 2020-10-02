@@ -44,7 +44,7 @@
                                     <li><a href="/index.php/administrators">Administrators</a></li>
                                 </ul>
                             </li>
-                            <li><a href="/index.php/chat"><i class="typcn typcn-messages mr-2"></i> Chat</a></li>
+                            <li><a href="#"><i class="typcn typcn-messages mr-2"></i> Chat</a></li>
                             <li>
                                 <a class="has-arrow material-ripple" href="#">
                                     <i class="typcn typcn-mail mr-2"></i>
@@ -80,7 +80,7 @@
                                 </ul>
                             </li>
 
-                            <li class="nav-label">Components</li>
+                            <li class="nav-label">Archives</li>
                             <li>
                                 <a class="has-arrow material-ripple" href="#">
                                     <i class="typcn typcn-coffee mr-2"></i>
