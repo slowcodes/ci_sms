@@ -74,7 +74,7 @@
                     </div>
                     <!--/.Content Header (Page header)--> 
                     <div class="body-content">
-                        <form id="teachers_form" data-parsley-validate="">
+                        <form id="teacher_form" data-parsley-validate="" method="post">
                             <div class="card">
                                 <div class="alert alert-warning">
                                     On completing of this form, Teachers are adviced to fill out the employement history form immediately activating their account and they accessing their account for the first time.
@@ -96,6 +96,7 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
+                                    <div id="processing"></div>
                                     <div class="form-group row">
                                         <label for="staff_id" class="col-lg-3 col-sm-12 col-form-label font-weight-600">Staff ID</label>
                                         <div class="col-lg-5 col-md-12 col-sm-12">
@@ -127,7 +128,7 @@
                                     <div class="form-group row">
                                         <label for="sex" class="col-lg-3 col-sm-12 col-form-label font-weight-600">Gender</label>
                                         <div class="col-lg-5 col-md-12 col-sm-12">
-                                            <select class="cep_with_callback form-control" id="sex" required>
+                                            <select class="cep_with_callback form-control" id="sex" name="sex" required>
                                                 <option></option>
                                                 <option value="Female">Female</option>
                                                 <option value="Male">Male</option>
@@ -137,7 +138,7 @@
                                     <div class="form-group row">
                                         <label for="date_of_birth" class="col-lg-3 col-sm-12 col-form-label font-weight-600">Date of birth</label>
                                         <div class="col-lg-5 col-md-12 col-sm-12">
-                                            <input type="date" class=" form-control" id="date_of_birth"/>
+                                            <input type="date" class=" form-control" id="date_of_birth" name="dob"/>
                                             <!-- <div class="text-muted">Crazy Zip Code Mask <code>0-00-00-00</code></div> -->
                                         </div>
                                     </div>
@@ -173,9 +174,15 @@
                                         <label for="state" class="col-lg-3 col-sm-12 col-form-label font-weight-600">State of origin</label>
                                         <div class="col-lg-5 col-md-12 col-sm-12">
                                             <select class="phone_us form-control" id="state" name="state" required>
-                                                <option value="ABIA">ABIA</option>
-                                                <option value="ADAMAWA">ADAMAWA</option>
-                                            </select>
+                                                <option></option>
+                                                <?php
+
+                                                    foreach($states as $state){
+
+                                                        echo "<option value='".$state['id']."'>".$state['state']." </option>";
+                                                    }
+
+                                                ?>                                            </select>
                                             <!-- <div class="text-muted">US Telephone Mask<code> (000) 000-0000</code></div> -->
                                         </div>
                                     </div>
@@ -265,7 +272,26 @@
                     $('.bs-callout-warning').toggleClass('hidden', ok);
                 })
                 .on('form:submit', function() {
-                    console.log("submited")
+                    document.body.scrollTop = 0; // For Safari
+                    document.documentElement.scrollTop = 0; //
+                    
+                    $('#processing').html("<img src='/assets/img/ajax-loader.gif' /></center>");
+                    e.preventDefault();
+                    formdata = $('#teacher-form').serialize();
+                    
+                    $.post("/index.php/teachers/process_add", formdata, 
+                    function(result, status){
+                        
+                        data = JSON.parse(result);
+                        if(data.error==true){
+                            $('#processing').html("<div class='alert alert-danger'><strong>Opps!!!</strong> "+data.msg+"</div>");
+                        }
+                        else{
+                            $('#processing').html("<div class='alert alert-success'><strong>Congratulations!</strong> "+data.msg+"</div>");
+                            document.getElementById("teacher-form").reset();   
+                            //window.location.href = data.route;
+                        }
+                    });
                     return false; // Don't submit form for this demo
                 });
             });

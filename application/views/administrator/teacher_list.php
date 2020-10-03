@@ -112,6 +112,19 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        <?php
+                                            foreach($teachers as $teacher){
+                                                echo "<tr><td>".$teacher['id']."</td>";
+                                                echo "<td></td>";
+                                                echo "<td>".$teacher['first_name'].' '.$teacher['last_name']."</td>";
+                                                echo "<td>".$teacher['address']."</td>";
+                                                echo "<td>".$teacher['sex']."</td>";
+                                                echo "<td><button type='button' class='btn btn-primary btn-circle mb-2 mr-1'><i class='fas fa-list'></i></button>
+                                                <button type='button' class='btn btn-warning btn-circle mb-2 mr-1'><i class='fas fa-edit'></i></button>
+                                                <button type='button' class='btn btn-danger btn-circle mb-2 mr-1'><i class='fas fa-trash-alt'></i></button></td></tr>";
+                                                
+                                            }
+                                        ?>                                        
                                         </tbody>
                                         <tfoot>
                                             <tr>

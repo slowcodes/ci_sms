@@ -6,6 +6,7 @@ class Student_model extends CI_Model
     function __construct()
     {
         parent::__construct();
+        $this->db->cache_on();
     }
     
     /*
@@ -23,11 +24,10 @@ class Student_model extends CI_Model
     {
         
         $this->db->select('*');
-        $this->db->from('users');
-        $this->db->join('students', 'users.id = students.user_id');
+        $this->db->from('students');
+        $this->db->join('users', 'users.id = students.user_id');
         return $this->db->get()->result_array();
-        //$this->db->order_by('user_id', 'desc');
-        //return $this->db->get('students')->result_array();
+        
     }
         
     /*

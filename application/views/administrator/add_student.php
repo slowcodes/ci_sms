@@ -58,7 +58,7 @@
                         <nav aria-label="breadcrumb" class="col-sm-4 order-sm-last mb-3 mb-sm-0 p-0 ">
                             <ol class="breadcrumb d-inline-flex font-weight-600 fs-13 bg-white mb-0 float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                                <li class="breadcrumb-item"><a href="#">Students</a></li>
+                                <li class="breadcrumb-item"><a href="/index.php/students">Students</a></li>
                                 <li class="breadcrumb-item active">Add/Update Students</li>
                             </ol>
                         </nav>
@@ -216,7 +216,7 @@
                                                 <div class="col-md-4 mb-3">
                                                     <div class="form-group">
                                                         <label for="roll_number" class="font-weight-600">Roll #</label>
-                                                        <input class="form-control" type="text" name="roll_number" id="roll_number" required >
+                                                        <input class="form-control" type="text" name="roll_id" id="roll_id" required >
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4 mb-3">
@@ -234,9 +234,14 @@
                                                 </div>
                                                 <div class="col-md-4 mb-3">
                                                     <div class="form-group form-check">
-                                                        <label class="font-weight-600"  for="aclass">Class</label>
-                                                        <select class="form-control" id="aclass" name="class_id" >
+                                                        <label class="font-weight-600"  for="aclass">Classroom</label>
+                                                        <select class="form-control" id="aclass" name="classroom_id" >
                                                             <option> </option>
+                                                            <?php
+                                                                foreach($classrooms as $classroom){
+                                                                    echo "<option value='".$classroom['id']."'>".$classroom['classroom']."</option>";
+                                                                }
+                                                            ?>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -249,7 +254,7 @@
                                                 <div class="col-md-4 mb-3">
                                                     <div class="form-group">
                                                         <label for="example-date-input" class="font-weight-600">Parent/Guardian</label>
-                                                        <select class="form-control" id="parent">
+                                                        <select class="form-control" id="parent_id" name="parent_id">
                                                             <option>Choose Parent</option>
                                                             <?php 
                                                                 foreach($parents as $parent){
@@ -262,7 +267,7 @@
                                                 <div class="col-md-4 mb-3">
                                                     <div class="form-group">
                                                         <label for="example-date-input" class="font-weight-600">Relationship</label>
-                                                        <select class="form-control" id="sex">
+                                                        <select class="form-control" id="parent_relationship" name="parent_relationship">
                                                             <option>Choose Relationship</option>
                                                             <option>Brother</option>
                                                             <option>Father</option>
@@ -316,8 +321,6 @@
                     $('.bs-callout-warning').toggleClass('hidden', ok);
                 })
                 .on('form:submit', function() {
-                    console.log("submited")
-
                     document.body.scrollTop = 0; // For Safari
                     document.documentElement.scrollTop = 0; //
                     

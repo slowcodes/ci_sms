@@ -8,7 +8,7 @@ class Students extends CI_Controller {
         parent::__construct();
         $this->load->helper('cookie');
         $this->load->library('session');
-        $this->load->library('Gateman');
+        $this->load->library(array('Gateman','form_validation'));
         $this->load->model(array('User_model','Student_model','Parent_model','Academic_level_model', 'Classroom_model'));
 
 
@@ -38,9 +38,19 @@ class Students extends CI_Controller {
 
 
     public function process_add(){
-
-        // if(isset($_POST) && count($_POST) > 0)     
-        // {   
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('username', 'Username', 'required|min_length[3]|max_length[40]|is_unique[users.username]',array('required'      => 'You have not provided %s.','is_unique'     => 'This %s already exists.'));
+        $this->form_validation->set_rules('password', 'Password', 'required', array('required' => 'You must provide a %s.'));
+        $this->form_validation->set_rules('conf_password', 'Password Confirmation', 'required|matches[password]');
+        $this->form_validation->set_rules('email', 'Email','required|min_length[3]|max_length[40]|is_unique[users.username]',array('required'      => 'You have not provided %s.','is_unique'     => 'This %s already exists.'));
+       
+        if($this->form_validation->run() == FALSE)     
+        {   
+            //redirect('user/index');
+            $return = array('error'=>true, 'msg'=>"We encountered an error while trying to process your entries. Please carefully cross-check the values provided and try again".validation_errors());
+            echo json_encode($return); 
+        }
+        else{
 
             $params = array(
 				'password' => md5($this->input->post('password')),
@@ -66,9 +76,9 @@ class Students extends CI_Controller {
             );
             $student_id = $this->Student_model->add_student($params);
             
-            $return = array('error'=>false, 'msg'=>'Congratulations student');
+            $return = array('error'=>false, 'msg'=>'registration was successful. Student can now access the portal with the resgistered credentails');
             echo json_encode($return);
-            //redirect('user/index');
-        //}
+            
+        }
     }
 }

@@ -9,6 +9,7 @@ class Teacher_model extends CI_Model
     function __construct()
     {
         parent::__construct();
+        $this->db->cache_on();
     }
     
     /*
@@ -24,8 +25,11 @@ class Teacher_model extends CI_Model
      */
     function get_all_teachers()
     {
-        $this->db->order_by('userid', 'desc');
-        return $this->db->get('teachers')->result_array();
+        $this->db->select('*');
+        $this->db->from('teachers');
+        $this->db->join('users', 'users.id = teachers.id');
+        return $this->db->get()->result_array();
+        
     }
         
     /*

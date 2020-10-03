@@ -89,7 +89,7 @@
                                             </div>
                                         </div>
                                         <div class="card-body">
-                                        
+                                            <div id="processing"></div>
                                             <div class="form-row">
                                                 <div class="col-md-4 mb-3">
                                                     <div class="form-group">
@@ -137,6 +137,22 @@
                                                     </div>
                                                 </div>
                                                 
+                                                <div class="col-md-4 mb-3">
+                                                    <div class="form-group form-check">
+                                                        <label class="font-weight-600"  for="religion">State of origin</label>
+                                                        <select class="form-control" required name="state_id" id="state_id">
+                                                            <option ></option>
+                                                            <?php
+
+                                                                foreach($states as $state){
+
+                                                                    echo "<option value='".$state['id']."'>".$state['state']." </option>";
+                                                                }
+                                                            
+                                                            ?>
+                                                        </select>
+                                                    </div>
+                                                </div>
                                             </div>
 
                                             <div class="form-row">
@@ -166,7 +182,7 @@
                                                 <div class="col-md-4 mb-3">
                                                     <div class="form-group">
                                                         <label for="username" class="font-weight-600">Username</label>
-                                                        <input type="text" class="form-control" id="username" required placeholder="Bambina">
+                                                        <input type="text" class="form-control" id="username" name="username" required>
                                                         <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
                                                     </div>
                                                 </div>
@@ -179,7 +195,7 @@
                                                 <div class="col-md-4 mb-3">
                                                     <div class="form-group form-check">
                                                         <label class="font-weight-600"  for="conf_password">Confirm password</label>
-                                                        <input type="password" class="form-control" id="conf_password"  required>
+                                                        <input type="password" class="form-control" id="conf_password" name="conf_password" required>
                                                     </div>
                                                 </div>
                                             </div>
@@ -216,7 +232,28 @@
                     $('.bs-callout-warning').toggleClass('hidden', ok);
                 })
                 .on('form:submit', function() {
-                    console.log("submited")
+                    
+                    document.body.scrollTop = 0; // For Safari
+                    document.documentElement.scrollTop = 0; //
+                    
+                    $('#processing').html("<img src='/assets/img/ajax-loader.gif' /></center>");
+                    //e.preventDefault();
+                    formdata = $('#parent-form').serialize();
+                    
+                    $.post("/index.php/parents/process_add", formdata, 
+
+                    function(result, status){
+                        
+                        data = JSON.parse(result);
+                        if(data.error==true){
+                            $('#processing').html("<div class='alert alert-danger'><strong>Opps!!!</strong> "+data.msg+"</div>");
+                        }
+                        else{
+                            $('#processing').html("<div class='alert alert-success'><strong>Congratulations!</strong> "+data.msg+"</div>");
+                            document.getElementById("parent-form").reset();   
+                            //window.location.href = data.route;
+                        }
+                    });
                     return false; // Don't submit form for this demo
                 });
             });

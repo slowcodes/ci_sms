@@ -9,23 +9,23 @@ class Parent_model extends CI_Model
     function __construct()
     {
         parent::__construct();
+        $this->db->cache_on();
     }
     
-    /*
-     * Get parent by user_id
-     */
+
     function get_parent($user_id)
     {
         return $this->db->get_where('parents',array('user_id'=>$user_id))->row_array();
     }
         
-    /*
-     * Get all parents
-     */
+
     function get_all_parents()
     {
-        $this->db->order_by('user_id', 'desc');
-        return $this->db->get('parents')->result_array();
+        $this->db->select('*');
+        $this->db->from('parents');
+        $this->db->join('users', 'parents.user_id = users.id');
+        return $this->db->get()->result_array();
+
     }
         
     /*
