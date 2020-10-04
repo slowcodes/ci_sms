@@ -114,14 +114,14 @@
                                     My School
                                 </a>
                                 <ul class="nav-second-level">
-                                    <li><a href="/index.php/settings/school/profile">School Profile</a></li>
+                                    <li><a href="/index.php/settings/school/web">School Profile</a></li>
                                     <li><a href="/index.php/settings/school/portal">Portal Setting</a></li>
-                                    <li><a href="/index,php/settings/assigned_subjects">Sessions &amp; Terms </a></li>
-                                    <li><a href="#">Form Teachers</a></li>
+                                    <!-- <li><a href="/index.php/settings/assigned_subjects">Sessions &amp; Terms </a></li> -->
+                                    <li><a href="/index.php/setting/form_teachers">Form Teachers</a></li>
                                 </ul>
                             </li>
     
-                            <li><a href="/index.php/announcements"><i class="typcn typcn-bookmark mr-2"></i>Annoucements</a></li>
+                            <li><a href="/index.php/settings/announcements"><i class="typcn typcn-bookmark mr-2"></i>Annoucements</a></li>
                             
                             <li><a href="#"><i class="typcn typcn-attachment-outline mr-2"></i>Changelog<span class="badge badge-success ml-auto">v1.1.0</span></a></li>
                             <li><a href="#"><i class="typcn typcn-support mr-2"></i>Documentation</a></li>

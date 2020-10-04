@@ -51,14 +51,17 @@ class Students extends CI_Controller {
             echo json_encode($return); 
         }
         else{
-
+            $image = addslashes(file_get_contents($_FILES['photo']['tmp_name'])); //SQL Injection defence!
+            //$image_name = addslashes($_FILES['photo']['name']);
+            
             $params = array(
 				'password' => md5($this->input->post('password')),
 				'first_name' => $this->input->post('first_name'),
 				'last_name' => $this->input->post('last_name'),
 				'username' => $this->input->post('username'),
 				'account_type' => 'Student',
-				'active' => '1',
+                'active' => '1',
+                'photo'=>$image,
 				'middle_name' => $this->input->post('middle_name'),
 				'sex' => $this->input->post('sex'),
             );
@@ -76,7 +79,7 @@ class Students extends CI_Controller {
             );
             $student_id = $this->Student_model->add_student($params);
             
-            $return = array('error'=>false, 'msg'=>'registration was successful. Student can now access the portal with the resgistered credentails');
+            $return = array('error'=>false, 'msg'=>'registration was successful. Student can now access the portal with the registered credentails');
             echo json_encode($return);
             
         }

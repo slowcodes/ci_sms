@@ -74,7 +74,7 @@
                     </div>
                     <!--/.Content Header (Page header)--> 
                     <div class="body-content">
-                        <form id="teacher_form" data-parsley-validate="" method="post">
+                        <form id="teacher-form" data-parsley-validate="" method="post">
                             <div class="card">
                                 <div class="alert alert-warning">
                                     On completing of this form, Teachers are adviced to fill out the employement history form immediately activating their account and they accessing their account for the first time.
@@ -200,14 +200,14 @@
                                     <div class="form-group row">
                                         <label for="password" class="col-lg-3 col-sm-12 col-form-label font-weight-600">Password</label>
                                         <div class="col-lg-5 col-md-12 col-sm-12">
-                                            <input type="text" class="cpf form-control" id="password" name="password" required/>
+                                            <input type="password" class="cpf form-control" id="password" name="password" required/>
                                             <!-- <div class="text-muted">CPF Mask<code> 000.000.000-00</code></div> -->
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="conf_password" class="col-lg-3 col-sm-12 col-form-label font-weight-600">Confirm password</label>
                                         <div class="col-lg-5 col-md-12 col-sm-12">
-                                            <input type="text" class="cnpj form-control" id="conf_password" name="conf_password" required/>
+                                            <input type="password" class="cnpj form-control" id="conf_password" name="conf_password" required/>
                                             <!-- <div class="text-muted">CNPJ Mask<code> 00.000.000/0000-00</code></div> -->
                                         </div>
                                     </div>
@@ -276,7 +276,7 @@
                     document.documentElement.scrollTop = 0; //
                     
                     $('#processing').html("<img src='/assets/img/ajax-loader.gif' /></center>");
-                    e.preventDefault();
+                    //e.preventDefault();
                     formdata = $('#teacher-form').serialize();
                     
                     $.post("/index.php/teachers/process_add", formdata, 

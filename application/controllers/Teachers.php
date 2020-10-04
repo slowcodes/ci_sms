@@ -41,12 +41,13 @@ class Teachers extends CI_Controller {
         $this->form_validation->set_rules('password', 'Password', 'required', array('required' => 'You must provide a %s.'));
         $this->form_validation->set_rules('conf_password', 'Password Confirmation', 'required|matches[password]');
         $this->form_validation->set_rules('email', 'Email','required|min_length[3]|max_length[40]|is_unique[users.username]',array('required'      => 'You have not provided %s.','is_unique'     => 'This %s already exists.'));
-       
+        
+        $return = array();
         if($this->form_validation->run() == FALSE)     
         {   
             //redirect('user/index');
             $return = array('error'=>true, 'msg'=>"We encountered an error while trying to process your entries. Please carefully cross-check the values provided and try again".validation_errors());
-            echo json_encode($return); 
+             
         }
         else{
 
@@ -55,7 +56,7 @@ class Teachers extends CI_Controller {
 				'first_name' => $this->input->post('first_name'),
 				'last_name' => $this->input->post('last_name'),
 				'username' => $this->input->post('username'),
-				'account_type' => 'Student',
+				'account_type' => 'Teacher',
 				'active' => '1',
 				'middle_name' => $this->input->post('middle_name'),
 				'sex' => $this->input->post('sex'),
@@ -64,7 +65,7 @@ class Teachers extends CI_Controller {
 
             $params = array(
                 'staff_id' => $this->input->post('staff_id'),
-                'user_id' => $user_id,
+                'userid' => $user_id,
 				'dob' => $this->input->post('dob'),
 				'highest_qualification' => $this->input->post('highest_qualification'),
 				'email' => $this->input->post('email'),
@@ -74,7 +75,10 @@ class Teachers extends CI_Controller {
             );
             
             $teacher_id = $this->Teacher_model->add_teacher($params);
+            $return = array('error'=>false, 'msg'=>'registration was successful. The can now access the portal with the registered credentails and update his/her academic qualifications');
+
         }
+        echo json_encode($return);
 
     }
 }

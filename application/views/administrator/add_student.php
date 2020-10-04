@@ -77,7 +77,7 @@
                        
                         <div class="row">
                             <div class="col-md-12 col-lg-12">
-                                <form id="student-form" data-parsley-validate="" method="post">
+                                <form id="student-form" enctype="multipart/form-data" data-parsley-validate="" method="post">
                                     <div class="card mb-4">
                                         <div class="alert alert-warning">
                                             This form will require you to select a parent/gurdian before submitting it. A Parents/Guardian of a student must be registered for a new student before registering a new student. To register a parent/gurdian please click <a href="/index.php/parents/add">here</a>
@@ -283,7 +283,7 @@
                                                 <div class="col-md-4 mb-3">
                                                     <div class="form-group">
                                                         <label for="academic_level" class="font-weight-600">Upload Photo</label>
-                                                        <input type="file" id="photo" name="photo" />
+                                                        <input type="file" id="photo" class="form-control" name="photo" />
                                                     </div>
                                                 </div>
                                                 
