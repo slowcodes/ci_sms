@@ -101,13 +101,50 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                
-                                <form action="#" class="dropzone" id="dropzoneForm" >
+                                <div id="processing"></div>
+                                <form method="post" id="params" action="#">
+                                    <div class="form-row">
+
+                                        <div class="col-md-4 mb-3">
+                                            <div class="form-group">
+                                                <label for="subject" class="font-weight-600">Description</label>
+                                                <input class="form-control" id="description" name="description" onfocusout="setSubjectLevel();">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4 mb-3">
+                                            <div class="form-group">
+                                                <label for="level" class="font-weight-600">Level</label>
+                                                <select class="form-control" id="level" name="level" onChange="setSubjectLevel();" >
+                                                    <?php
+                                                        foreach($levels as $level){
+                                                            echo "<option value='".$level['id']."'>".$level['level']."</option>";
+                                                        }
+                                                    ?>
+                                                </select>
+                                                <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="form-group">
+                                                <label for="subject" class="font-weight-600">Subject</label>
+                                                <select class="form-control" id="subject" name="subject" onChange="setSubjectLevel();">
+                                                    <?php
+                                                        foreach($subjects as $subject){
+                                                            echo "<option value='".$subject['id']."'>".$subject['subject']."</option>";
+                                                        }
+                                                    ?>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        
+                                    </div>
+                                </form>
+                                <form action="/index.php/resources/upload" class="dropzone" id="fileupload" >
                                     <div class="fallback " >
                                         <input name="file" type="file" multiple />
                                     </div>
-
-                                    
                                 </form>
                                 <!-- <div class="col-md-12"> To be called on si=ubmission
                                     <div class="form-group">
@@ -123,14 +160,14 @@
                                     </div>
                                 </div> -->
                                 <div class="card-footer">
-                                    <button type="submit" class="btn btn-primary mr-1">Submit</button>
-                                    <button type="cancle" class="btn btn-danger">Cancel</button>
+                                    <button type="submit" id="submit-all" onClick="resetform();" class="btn btn-primary mr-1">Submit</button>
+                                    <button type="cancel" class="btn btn-danger">Cancel</button>
                                 </div>
 
                             </div>
-                            <div class="card-footer">
+                            <!-- <div class="card-footer">
                                 <p class="mb-0">All avalible options and full documentation you can find: <a target="_blank" href="http://www.dropzonejs.com/#configuration-options">http://www.dropzonejs.com/#configuration-options</a> </p>
-                            </div>
+                            </div> -->
                         </div>
                     </div><!--/.body content-->
                 </div><!--/.main content-->
@@ -153,6 +190,26 @@
         <script src="/assets/plugins/dropzone/dropzone.active.js"></script>
         <!--Page Scripts(used by all page)-->
         <script src="/assets/dist/js/sidebar.js"></script>
+
+        <script>
+            function setSubjectLevel() {
+                formdata = $('#params').serialize();
+                $.post("/index.php/resources/setparams", formdata, 
+                    function(result, status){
+                });    
+            }
+
+            function resetform(){
+                $("#processing").html("<div class='alert alert-success'><strong>Congratulations!</strong> Your files has been successfully uploaded</div>");
+                setTimeout(function() { 
+                    $("#processing").hide(); 
+                    window.location.href = '/index.php/resources/add';
+                }, 5000);
+                document.getElementById("fileupload").reset();
+                document.getElementById("params").reset();
+            }
+
+        </script>
     </body>
 
 </html>

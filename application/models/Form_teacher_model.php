@@ -14,7 +14,11 @@ class Form_teacher_model extends CI_Model
      */
     function get_form_teacher($id)
     {
-        return $this->db->get_where('form_teachers',array('id'=>$id))->row_array();
+        $this->db->select('*');
+        $this->db->from('form_teachers');
+        $this->db->join('classrooms', 'form_teachers.classroom_id = classrooms.id');
+        $this->db->where('form_teachers.teacher_id',$id );
+        return $this->db->get()->result_array();
     }
         
     /*

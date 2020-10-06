@@ -115,6 +115,19 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php
+                                                foreach($resources As $resource){
+                                                    echo "<tr><td>".$resource['id']."</td>";
+                                                    echo "<td>".$resource['subject']."</td>";
+                                                    echo "<td><a href='#'>".$resource['title']."</a></td>";
+                                                    echo "<td>".$resource['media_type']."</td>";
+                                                    echo "<td>"."<button type='button' class='btn btn-primary btn-circle mb-2 mr-1'><i class='fas fa-list'></i></button>
+                                                <button type='button' class='btn btn-warning btn-circle mb-2 mr-1'><i class='fas fa-edit'></i></button>
+                                                <button type='button' class='btn btn-danger btn-circle mb-2 mr-1'><i class='fas fa-trash-alt'></i></button>"."</td>";
+                                                echo "</tr>";
+
+                                                }
+                                            ?>
                                         </tbody>
                                         <tfoot>
                                             <tr>

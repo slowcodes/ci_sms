@@ -85,13 +85,13 @@
                                         </a>
                                     </div>
                                     <div class="media-body text-left ml-3 mt-1">
-                                        <h3 class="font-large-1 white">Mozammel Hoque
-                                            <span class="font-medium-1 white">(Project manager)</span>
+                                        <h3 class="font-large-1 white"><?php echo $first_name.' '.$last_name; ?>
+                                            <span class="font-medium-1 white">(<?php echo $user_type ?>)</span>
                                         </h3>
                                         <p class="white">
-                                            <i class="fas fa-map-marker-alt"></i> New York, USA </p>
-                                        <p class="white text-bold-300 d-none d-sm-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed odio risus. Integer sit amet dolor elit. Suspendisse
-                                            ac neque in lacus venenatis convallis. Sed eu lacus odio</p>
+                                            <i class="fas fa-map-marker-alt"></i> Kuje, FCT Abuja </p>
+                                        <!-- <p class="white text-bold-300 d-none d-sm-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed odio risus. Integer sit amet dolor elit. Suspendisse
+                                            ac neque in lacus venenatis convallis. Sed eu lacus odio</p> -->
                                         <ul class="list-inline">
                                             <li class="list-inline-item pr-1 line-height-1">
                                                 <a href="#" class="fs-26 ">
@@ -140,7 +140,7 @@
                                                 <h6 class="mb-0 font-weight-600">Location</h6>
                                             </div>
                                             <div class="col-auto">
-                                                <span class="fs-13 font-weight-600 text-muted">Los Angeles, CA</span>
+                                                <span class="fs-13 font-weight-600 text-muted">Kuje, FCT, Nigeria</span>
                                             </div>
                                         </div>
                                         <hr>
@@ -149,7 +149,7 @@
                                                 <h6 class="mb-0 font-weight-600">Website</h6>
                                             </div>
                                             <div class="col-auto">
-                                                <a href="#!" class="fs-13 font-weight-600">themes.getbootstrap.com</a>
+                                                <a href="#!" class="fs-13 font-weight-600">http://gsskuje.com.ng</a>
                                             </div>
                                         </div>
                                     </div>
@@ -271,8 +271,8 @@
                                             <div class="row">
                                                 <div class="col-md-5 pr-md-1">
                                                     <div class="form-group">
-                                                        <label class="font-weight-600">Company (disabled)</label>
-                                                        <input type="text" class="form-control" disabled="" placeholder="Company" value="Creative Code Inc.">
+                                                        <label class="font-weight-600">Account Type</label>
+                                                        <input type="text" class="form-control" disabled="" placeholder="Company" value="Administrator">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3 px-md-1">

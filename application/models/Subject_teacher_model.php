@@ -16,6 +16,18 @@ class Subject_teacher_model extends CI_Model
     {
         return $this->db->get_where('subject_teacher',array('id'=>$id))->row_array();
     }
+
+    /*
+     * Get subject_teacher by id
+     */
+    function get_subjects_assigned($teacher_id)
+    {
+        $this->db->select('*');
+        $this->db->from('subject_teacher');
+        $this->db->join('subjects', 'subjects.id = subject_teacher.teacher');
+        $this->db->where('subject_teacher.teacher',$teacher_id );
+        return $this->db->get()->result_array();
+    }
         
     /*
      * Get all subject_teacher
@@ -34,6 +46,8 @@ class Subject_teacher_model extends CI_Model
         $this->db->insert('subject_teacher',$params);
         return $this->db->insert_id();
     }
+
+    
     
     /*
      * function to update subject_teacher

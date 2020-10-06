@@ -22,8 +22,11 @@ class Classroom_model extends CI_Model
      */
     function get_all_classrooms()
     {
-        $this->db->order_by('id', 'desc');
-        return $this->db->get('classrooms')->result_array();
+        $this->db->select('*');
+        $this->db->from('classrooms');
+        $this->db->join('academic_levels', 'academic_levels.id = classrooms.level_id');
+        return $this->db->get()->result_array();
+    
     }
         
     /*

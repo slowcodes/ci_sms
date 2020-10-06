@@ -17,7 +17,11 @@ class Teacher_model extends CI_Model
      */
     function get_teacher($userid)
     {
-        return $this->db->get_where('teachers',array('userid'=>$userid))->row_array();
+        $this->db->select('*');
+        $this->db->from('teachers');
+        $this->db->join('users', 'users.id = teachers.id');
+        $this->db->where('teachers.id',$userid );
+        return $this->db->get()->row_array();
     }
         
     /*

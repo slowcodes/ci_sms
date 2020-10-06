@@ -22,6 +22,12 @@ class Level_subject_model extends CI_Model
      */
     function get_all_level_subjects()
     {
+        $this->db->select('*');
+        $this->db->from('level_subjects');
+        $this->db->join('subjects', 'subjects.id = level_subjects.subjects_id');
+        $this->db->join('academic_levels', 'academic_levels.id = level_subjects.level_id');
+        return $this->db->get()->result_array();
+        
         $this->db->order_by('id', 'desc');
         return $this->db->get('level_subjects')->result_array();
     }

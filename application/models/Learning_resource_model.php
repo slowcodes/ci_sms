@@ -22,8 +22,13 @@ class Learning_resource_model extends CI_Model
      */
     function get_all_learning_resource()
     {
-        $this->db->order_by('id', 'desc');
-        return $this->db->get('learning_resource')->result_array();
+        $this->db->select('*');
+        $this->db->from('learning_resource');
+        $this->db->join('subjects', 'subjects.id = learning_resource.subject');
+        return $this->db->get()->result_array();
+        
+        //$this->db->order_by('id', 'desc');
+        //return $this->db->get('learning_resource')->result_array();
     }
         
     /*

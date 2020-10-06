@@ -6,7 +6,7 @@ class Teachers extends CI_Controller {
     function __construct()
     {
         parent::__construct();
-        $this->load->model(array('User_model','Teacher_model','State_model')); 
+        $this->load->model(array('User_model','Form_teacher_model','Subject_teacher_model','Teacher_model','Classroom_model','Level_subject_model','State_model')); 
         $this->load->helper('cookie');
         $this->load->library('session');
         $this->load->library('Gateman');
@@ -18,7 +18,10 @@ class Teachers extends CI_Controller {
             'token'=> $this->session->userdata('token'),
             'user_type'=> $this->session->userdata('user_type'),
             'teachers' => $this->Teacher_model->get_all_teachers(),
-            'states' => $this->State_model->get_all_states()
+            'states' => $this->State_model->get_all_states(),
+            'classrooms' => $this->Classroom_model->get_all_classrooms(),
+            'subjects' => $this->Level_subject_model->get_all_level_subjects()
+
         );
     }
 
@@ -79,6 +82,30 @@ class Teachers extends CI_Controller {
 
         }
         echo json_encode($return);
+
+    }
+
+    public function add_subject_teacher($subject_id, $teacher_id)
+    {
+        $this->Subject_teacher_model->add_subject_teacher(array(
+            'teacher_id'=>$teacher_id,
+            'subject_id'=>$subject_id,
+            'term'=>1
+        ));
+        //echo $subject_id.' ';
+    }
+
+    public function get_teacher($id){
+
+        $this->Teacher_model->get_teacher($id);
+        $response = array(
+            'error'=>false, 
+            'teacher'=>$this->Teacher_model->get_teacher($id),
+            'msg' =>'Sucessful', 
+            'subject_assigned' =>$this->Subject_teacher_model->get_subjects_assigned($id),
+            'classes' => $this->Form_teacher_model->get_form_teacher($id)
+        );
+        echo json_encode($response);
 
     }
 }
