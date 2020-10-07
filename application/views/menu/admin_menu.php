@@ -80,6 +80,27 @@
                                 </ul>
                             </li>
 
+                            <li>
+                                <a class="has-arrow material-ripple" href="#">
+                                    <i class="typcn typcn-archive mr-2"></i>
+                                    Library Management
+                                </a>
+                                <ul class="nav-second-level">
+                                    <li><a href="#">User</a></li>
+                                    <li>
+                                        <a class="has-arrow" href="#" aria-expanded="false">Books</a>
+                                        <ul class="nav-third-level">
+                                            <li><a href="#">Add Book</a></li>
+                                            <li><a href="#">Issue Book</a></li>
+                                            <li><a href="#">Return Book</a></li>
+                                            <li><a href="#">Inventory</a></li>
+                                            <li><a href="#">Issued Books</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Fines &amp; Overdues</a></li>
+                                    <li><a href="#"></a>Reports</li>
+                                </ul>
+                            </li>
                             <li class="nav-label">Archives</li>
                             <li>
                                 <a class="has-arrow material-ripple" href="#">
